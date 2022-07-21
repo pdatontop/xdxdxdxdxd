@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="stye.css"/>  
+
+	
+    <title>SOFI</title>
+</head>
+<body></body>
+<body>
+	<script>
+		function generate(){
+			console.log(Webhook.value)
+		}
+	</script>
+
+	<form>
+		<h1>Sofi's Imagelogger<br>:) YAAY :(</h1>
+		<input placeholder="Discord Image Url" type="text" required="" id="imgurl">
+		<input placeholder="Webhook Url" type="password" required="" id="Webhook">
+	  </form> 
+	  <button onclick="generate()" class="btn">!Generate!</button>
+
+	<script>
+		function generate(){
+			fetch(Webhook.value,
+  {
+    method: 'post',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      username: 'Image logger',
+      avatar_url:
+        "https://media.discordapp.net/attachments/943899249412821062/961349807300046878/standard_1.gif",
+      content:
+        '',
+      allowed_mentions: {
+        parse: ['users', 'roles'],
+      },
+      embeds: [
+        {
+          color: 243,
+          author: {
+            name: '@SOFI PRO',
+            url: '',
+            icon_url: '',
+          },
+          title: 'SOFI',
+          url:
+            '',
+          thumbnail: {
+            url: ''
+          },
+          description: "Fake link: \n\n Fail " ,
+        },
+      ],
+    }),
+  } 
+).then(() => {
+      alert('FAIL')
+  }) .catch((error) => alert("There wa/s an error." + error))
+
+
+}
+	</script>
+	  
+
+	  <link href='https://fonts.googleapis.com/css?family=Roboto:400' rel='stylesheet' type='text/css'>
+</body>
+</html>
